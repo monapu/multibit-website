@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<body>
+<p><center><a href="help_contents.html">目次に戻る</a></center></p>
+<p>この文章は、主にMultiBitのヘルプからの翻訳です。</p>
+
+
+<h2>問題点の確認</h2>
+<p>多くの場合、メニューから、表示 | <img width="16" height="16" title="Messages" alt="Messages" src="img/comment.png">&nbsp;メッセージを選択し、メッセージウィンドウを表示することで、問題点を診断できます。</p>
+<p>何がおこったのか、より詳しい情報を得るには、ログファイルを確認してください。データディレクトリ内の'log'ディレクトリの中に、'multimona.log'として保存されています。このファイルは「メモ帳」や「テキストエディット」などのテキストビューアで表示できます。(v0.0.5以降、デフォルトではログを出力しなくなりました。データディレクトリ内の'multimona.properties'ファイルに、'logging=true'という行を追加してください。)</p>
+
+<h2>MultiMonaのデータ保管場所</h2>
+<p>MultiMonaは、ログや、デフォルトの multimona.wallet などのユーザー固有のデータを「ユーザー データ ディレクトリ」に保存します。このディレクトリ/フォルダは以下のようにして見つけることができます。</p>
+<ol>
+  <li>「メッセージ」タブの先頭のメッセージをチェックして下さい。例えば "ユーザー データ ディレクトリは '/Users/jim/Library/Application Support/MultiMona'です。" のように表示されています。</li>
+  <li>MultiMonaをインストールしたディレクトリに移動し、そこに"multimona.properties"ファイルがあるか確認して下さい。もしあれば、そのインストールディレクトリ自体をユーザー データ ディレクトリとして使用します。これは(MultiBitでの)下位互換性および、USBドライブ上での運用のためのものです。</li>
+  <li>なお不明な場合は、以下の「技術的アプローチ」をご覧ください。</li>
+</ol>
+
+<h2>技術的アプローチ</h2>
+<p>この節は、環境変数を利用する上級者向けのものです。"[]"で囲んだ部分、例えば[APPDATA]は環境変数APPDATAを参照します。
+<h3>Windows</h3>
+<p>以下の場所を確認して下さい。隠しフォルダを表示するよう設定しておく必要があります。</p>
+<ul>
+  <li>
+<code>[APPDATA]/MultiMona</code>  (Windows (7,8)の例: <code>C:\Documents and Settings\jim\AppData\Roaming\MultiMona)</code>
+  </li>
+<li>
+<code>[APPDATA]/MultiMona</code>  (Windows (XP以前)の例: <code>C:\Documents and Settings\jim\Application Data\MultiMona)</code>
+</li>
+</ul>
+
+<h3>Mac</h3>
+<p>OSXではユーザーライブラリーフォルダは通常非表示です。表示する方法はweb等で検索して下さい。</p>
+<ul>
+  <li>
+<code>[user.home]/Library/Application Support/MultiMona</code> (OSX 10.5+での例: <code>/Users/jim/Library/Application Support/MultiMona)</code>
+</li>
+</ul>
+
+<h3>Linux</h3>
+<p>Linuxではユーザーのホームディレクトリは普通に見ることができます。</p>
+<ul>
+  <li>
+<code>[user.home]/MultiMona</code> (Ubuntu/Debianの例: <code>/home/jim/MultiMona</code>)
+</li>
+</ul>
+
+<h2>関連記事</h2>
+<p>関連する記事があります。</p>
+<ul>
+  <li><a href="help_fileDescriptions.html">各ファイルの説明</a></li>
+  <li><a href="help_walletBackups.html">ウォレットのバックアップ</a></li>
+  <li><a href="help_movingAWallet.html">ウォレットの移動</a></li>
+</ul>
+<p><center><a href="help_contents.html">目次に戻る</a></center></p>
+</body>
+</html>

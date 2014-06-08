@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<body>
+<p><center><a href="help_contents.html">Back to help contents</a></center></p>
+
+
+<h2>I sent monacoin from MultiMona but they are stuck</h2>
+<h3>What is the symptom ?</h3>
+<p>You sent some monacoin from MultiMona but the monacoin is stuck and never confirms.</p>
+<p>The monacoins never arrive. Your balance seems to be wrong.</p>
+<p>In the '<img width="16" height="16" title="Transactions" alt="Transactions" src="img/transactions.png">&nbsp;Transactions' tab the transaction is shown with a square ("Seen by 1 peer") or, very rarely, a triangle ("Seen by 0 peers").
+</p>
+
+<h3>What does a status of a square or triangle mean ?</h3>
+<p>When you press the 'Send' button, MultiMona broadcasts your transaction to a single monacoind peer. It then listens on all its other connections to check that the transaction has been broadcast successfully.</p>
+<p>If you see a square or triangle in the transaction status this is a "did not broadcast" failure which means that the broadcast and propagation through the Monacoin network was unsuccessful.</p>
+
+<h3>What can you do about it ?</h3>
+<p>There are two main reasons why a transaction gets stuck on "Seen by one peer" and does not propagate through the Monacoin network.
+  These are:</p>
+
+<h4>You lost your network connection and the transaction did not get sent successfully to the peer (did not broadcast)</h4>
+<p>If you suspect this is the cause, do the following:</p>
+<ol>
+  <li>Close MultiMona.</li>
+  <li>Fix your network connection and try it out using a browser.</li>
+  <li>
+    Restart MultiMona and it will re-transmit any transactions that were unsuccessfully sent previously. It can sometimes take a couple of minutes to send a transaction and for it to propagate through the Monacoin network.
+  </li>
+</ol>
+<h4>The peer received the transaction but "did not like it" (did not relay)</h4>
+
+<p>In this case it will not pass it onto other monacoind instances. Your transaction will never propagate across the Monacoin network and the recipient will not receive it. It also will not appear on sites such as blockchain.info.</p>
+
+<p>There are various reasons why a peer does not relay a transaction. In a rough order of frequency they are:</p>
+<ol>
+  <li>There are lots of tiny inputs (under 5432 satoshis) in your wallet and the transaction fires the anti-spam rules.</li>
+  <li>The fee is too small and the peer chooses not to relay it.</li>
+  <li>The transaction is a double spend. Doubles spends aren't relayed through the network.</li>
+  <li>Some other reason - this is not a definitive list.</li>
+</ol>
+
+<p>You can see the size of the transaction you created by clocking the "Show Transaction Details" button below the transaction list. The size of the transaction is shown in bytes. A typical fee for a transaction is 0.0001 (0.1 mMONA).</p>
+
+<p>You can remove the transaction that never propagated by doing a 'Tools |
+  <img width="16" height="16" title="Reset" alt="Reset" src="img/resetTransactions.png">&nbsp;Reset Blockchain and Transactions'.
+</p>
+
+<h3>Related articles</h3>
+<p>Here are some related articles:</p>
+<ul>
+  <li><a href="help_sendingBitcoin.html">Sending monacoin</a></li>
+  <li><a href="help_resetBlockchain.html">Reset blockchain and transactions</a></li>
+</ul>
+<p><center><a href="help_contents.html">Back to help contents</a></center></p>
+</body>
+</html>

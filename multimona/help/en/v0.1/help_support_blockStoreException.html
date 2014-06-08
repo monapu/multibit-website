@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<body>
+<p><center><a href="help_contents.html">Back to help contents</a></center></p>
+
+
+<h2>BlockStoreException</h2>
+<p>You see a BlockStoreException very occasionally when MultiMona starts. It prevents you synchronising with the Monacoin network.</p>
+<p>You can fix this problem by doing the following:</p>
+<ol>
+<li><p>Find where MultiMona is storing your user data - see the help topic <a href="help_troubleshooting.html">Troubleshooting</a></p></li>
+<li><p>Shut down MultiMona</p></li>
+<li><p>Go to your MultiMona user data directory - worked out in step 1 - and delete the file multimona.spvchain</p></li> 
+<li><p>Start up MultiMona again</p></li>
+</ol>
+It will then regenerate this file and start syncing.
+After it has synced you should see all your monacoin in your wallet..
+<p><center><a href="help_contents.html">Back to help contents</a></center></p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<body>
+<p><center><a href="help_contents.html">目次に戻る</a></center></p>
+
+
+<h2>BlockStoreException</h2>
+
+<p>BlockStoreExceptionはMultiMonaの起動時にまれに発生します。この場合、ネットワークとの同期ができません。</p>
+
+<p>以下の手順で復帰できます。</p>
+
+<ol>
+<li><p>MultiMonaのデータがどこに保存されているかを確認します。<a href="help_troubleshooting.html">問題点の確認</a>の記事をご覧ください。</p></li>
+
+<li><p>MultiMonaを終了させてください。</p></li>
+
+<li><p>1.で確認した、MultiMonaのユーザーデータディレクトリに移動し、multimona.spvchainファイルを削除してください。</p></li>
+
+<li><p>MultiMonaを再起動してください。</p></li>
+
+</ol>
+
+multimona.spvchainファイルが再生成され、同期が始まります。
+同期が終了すると、全てのMonacoinがwallet内に復旧されるはずです。
+
+<p><center><a href="help_contents.html">目次に戻る</a></center></p>
+</body>
+</html>

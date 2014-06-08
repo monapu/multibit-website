@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<body>
+<p><center><a href="help_contents.html">目次に戻る</a></center></p>
+<p>この文章は、主にMultiBitのヘルプからの翻訳です。</p>
+
+<h2>各ファイルの説明</h2>
+<p>MultiMonaは実行時に、さまざまなファイルをPC上に作成します。この節では、これらのファイルの目的について記述します。</p>
+<p>以下説明のため、<b>saving.wallet</b>という新規ウォレットを作成した場合を考えます。</p>
+
+<h3>MultiMonaのウォレットファイル</h3>
+<p>以下が、ウォレットが保存されるファイルのリストです</p>
+<ul>
+  <li><p>saving.wallet&nbsp;&nbsp;=&nbsp;&nbsp;これはウォレットファイル本体であり、秘密鍵とトランザクションが記録されます。</p></li>
+  <li><p>saving.info&nbsp;&nbsp;=&nbsp;&nbsp;このファイルには、ウォレットの管理情報や、アドレスに付けたラベルの情報が含まれます。</p></li>
+  <li><p>saving-data&nbsp;&nbsp;=&nbsp;&nbsp;ウォレットのバックアップが含まれるディレクトリです。</p></li>
+  <li><p>saving-data/key-backup&nbsp;&nbsp;=&nbsp;&nbsp;自動的にエクスポートされた秘密鍵が保存されるディレクトリです。</p></li>
+  <li><p>saving-data/rolling-backup&nbsp;&nbsp;=&nbsp;&nbsp;ローリングバックアップされたウォレットが保存されるディレクトリです。</p></li>
+  <li><p>saving-data/wallet-backup&nbsp;&nbsp;=&nbsp;&nbsp;暗号化されたウォレットのバックアップが保存されるディレクトリです。</p></li>
+  <li><p>saving-data/wallet-unenc-backup&nbsp;&nbsp;=&nbsp;&nbsp;暗号化されていないウォレットのバックアップが保存されるディレクトリです。</p></li>
+</ul>
+<p><b>Private key backups</b>. In your private key backup directory you will have files called 'saving-YYYYMMDDHHMMSS.key'. Here the YYYYMMDDHHMMSS is a timestamp. With an encrypted wallet every time you add or change the password, add a receiving address or import private keys an encrypted, timestamped export of your private keys is created. This is encrypted with your wallet password. You can use these to recover the essentials of your wallet by importing one of these files into a new wallet.</p>
+<p><b>Rolling backups</b>. In your rolling backup directory you will see one (or sometimes more) file with the name 'saving-YYYYMMDDHHMMSS.wallet'. This is the rolling wallet backup file. Every time the wallet writes to disk, the existing wallet is kept as a backup. The main purpose of this file is to recover from any sudden loss of power that prevents a clean wallet save.</p>
+<p><b>Wallet backups</b>. These are two more directories where backups are made of your wallets. One stores backups for encrypted wallets, the other for unencrypted wallets. These files are in the format 'saving-YYYYMMDDHHMMSS.wallet' and 'saving-YYYYMMDDHHMMSS.info'. Your wallet is backed up to these directories when you open a wallet, add or change the password, add a receiving address or import private keys.</p>
+<p>When you add a password to a wallet all the unencrypted wallet backups are encrypted with the password you have chosen. These files are stored as ''saving-YYYYMMDDHHMMSS.wallet.cipher'. You can open these files as normal using the 'File | Open Wallet' menu option. When you do you will be asked for the wallet password to decrypt the wallet.</p>
+<p>If when MultiMona opens your main wallet file it is not successful it will automatically use the most recent backup files to try to recover your wallet.</p>
+<br>
+<!--<h3>Wallet files for MultiMona version 0.5.12 and earlier</h3>
+<p>Here is a list of the files stored with your wallet:</p>
+<ul>
+  <li><p>saving.wallet&nbsp;&nbsp;=&nbsp;&nbsp;This is the main wallet file containing your private keys and transactions.</p></li>
+  <li><p>saving.info&nbsp;&nbsp;=&nbsp;&nbsp;This file contains the description of the wallet and the labels you have given to your addresses.</p></li>
+  <li><p>saving-YYYYMMDDHHMMSS.wallet&nbsp;&nbsp;=&nbsp;&nbsp;Here the YYYYMMDDHHMMSS is a timestamp. This is the rolling wallet backup file. Every time the wallet writes to disk, the existing wallet is kept as a backup. Only one backup is kept. The main purpose of this file is to recover from any sudden loss of power that prevents a clean wallet save.</p></li>
+  <li><p>saving-YYYYMMDDHHMMSS.key&nbsp;&nbsp;=&nbsp;&nbsp;You may have several of these. With an encrypted wallet every time you add or change the password, add a receiving address or import private keys an encrypted, timestamped export of your private keys is created. This is encrypted with your wallet password. You can use these to recover the essentials of your wallet by importing one of these files into a new wallet.</p></li>
+</ul>
+<p>If when MultiMona opens your main wallet file it is not successful it will automatically use the most recent rolling backup file to try to recover your wallet.</p>
+<br>
+-->
+<h3>Other, non-wallet related files</h3>
+<p>There are also non wallet related files that are created in MultiMona. These are listed below:</p>
+<ul>
+  <li><p>multimona.properties&nbsp;&nbsp;=&nbsp;&nbsp;This is the MultiMona configuration file.</p></li>
+  <li><p>multimona.blockchain&nbsp;&nbsp;=&nbsp;&nbsp;This is the MultiMona blockchain, an early format.</p></li>
+  <li><p>multimona.spvstore&nbsp;&nbsp;=&nbsp;&nbsp;This is the MultiMona blockchain, a more advanced format.</p></li>
+  <li><p>multimona.checkpoints&nbsp;&nbsp;=&nbsp;&nbsp;This is the MultiMona checkpoints file. This is used to avoid having to download the whole blockchain.</p></li>
+  <li><p>multimona.targets&nbsp;&nbsp;=&nbsp;&nbsp;This file is used to validate difficulty of the blocks replayed from checkpoints.</p></li>
+</ul>
+
+<p><center><a href="help_contents.html">目次に戻る</a></center></p>
+</body>
+</html>

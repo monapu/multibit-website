@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<body>
+<p><center><a href="help_contents.html">目次に戻る</a></center></p>
+
+
+<h2>How to run MultiMona from a USB drive</h2>
+<h3>Windows</h3>
+<p>Installing MultiMona to run on a USB drive for Windows.</p>
+<ol>
+  <li>Insert your USB drive into your PC.</li>
+  <li>Run the MultiMona Windows installer. On the screen with the question "Select the installation path:" click on the
+    "Browse" button and select a directory on your USB drive.
+  </li>
+  <li>Run the rest of the installation as normal.</li>
+  <li>Once the installation is done, in Explorer navigate to your USB drive's MultiMona installation directory. It is the
+    directory with the "multimona.exe" file.
+  </li>
+  <li>Create a new text file called (exactly) "multimona.properties". Leave the file empty.
+    This is the MultiMona configuration file. Having a copy in the installation directory (rather than the user's
+    application data) tells MultiMona to run locally.
+  </li>
+  <li>To run MultiMona locally, double click on the multimona.exe file.</li>
+</ol>
+<p>You will have a single default wallet created, called multimona.wallet. You can create new ones using the 'Create
+  Wallet' button and doing a save into your USB drive. You will be using a locally stored blockchain (called
+  multimona.spvchain).</p>
+
+<h3>Linux</h3>
+<p>Installing MultiMona to run on a USB drive for Linux.</p>
+<ol>
+  <li>Insert your USB drive into your Linux machine.</li>
+  <li>Run the MultiMona Linux installer. On the screen with the question "Select the installation path:" click on the
+    "Browse" button and select a directory on your USB drive.
+  </li>
+  <li>Run the rest of the installation as normal.</li>
+  <li>Once the installation is done, navigate to your USB drive's MultiMona installation directory. It is the directory
+    with the "multimona-exe.jar" file.
+  </li>
+  <li>Create a new text file called (exactly) "multimona.properties". Leave the file empty.
+    This is the MultiMona configuration file. Having a copy in the installation directory (rather than the user's
+    application data) tells MultiMona to run locally.
+  </li>
+  <li>To run MultiMona locally, double click on the multimona-exe.jar. If this does not start up the jar file, open a
+    command line to your installation directory and run "java -jar multimona-exe.jar".
+  </li>
+</ol>
+
+<h3>Mac</h3>
+<p>On a Mac, copy the entire MultiMona application onto your USB drive. The name of the application file will be
+  MultiMona.app. Then go to where your wallets are stored and copy the files multimona.properties and
+  multimona.spvchain onto your USB drive into the same directory. You can then double click the MultiMona.app
+  on your USB drive to run MultiMona</p>
+<h2>Notes and Limitations</h2>
+<ol>
+  <li>The path of the wallets in the configuration file contains the USB drive letter which may change according to how
+    many other drives you have plugged in. In this case the wallets other than multimona.wallet will not be found when
+    MultiMona opens. You can just use the "Open Wallet" button to load them.
+  </li>
+  <li>With the instructions above, it assumes you have Java installed on the machine you plug into. You can also have a
+    "Java Runtime Environment" stored on the USB too so that it is guaranteed to run. (More details to follow).
+  </li>
+  <li>The installer will add some shortcuts for running MultiMona pointing to the USB drive. These will not work if the
+    USB drive is removed.
+  </li>
+</ol>
+<p><center><a href="help_contents.html">目次に戻る</a></center></p>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<body>
+<p><center><a href="help_contents.html">Back to help contents</a></center></p>
+
+
+<h2>Exporting private keys</h2>
+<p>Private keys are long strings of letters and numbers that are literally the key to spending your monacoin. Each wallet
+  has a number of private keys (one for each address). You can back up your private keys for a MultiMona wallet into a
+  text file called a 'private key export file'. You can password protect this text file to prevent other people reading
+  this data.</p>
+<h3>How to export the private keys in a wallet</h3>
+<ol>
+  <li>In the '<img width="16" height="16" title="Wallets" alt="Wallets" src="img/yourWallets.png">&nbsp;Wallets'
+    side panel choose the wallet you want to export the private keys for.
+  </li>
+  <li>Select the menu option 'Tools | <img width="16" height="16" title="Export private keys" alt="Export private keys" src="img/exportKey.png">&nbsp;Export Private Keys'. The '<img width="16" height="16" title="Export private keys" alt="Export private keys" src="img/exportKey.png">&nbsp;Export
+    Private Keys' screen appears.
+  </li>
+  <li>By default, the private keys file is called the same as your wallet file, only with an extension 'key' rather than
+    wallet. You can see this in the following screenshot:<p><img width="617" height="479" title="Export private keys" alt="Export private keys" src="img/exportPrivateKeys.png"></p>
+</li>
+  <li>If you want to output the private key file to a different directory or filename click on the 'Export to. . .'
+    button. A file chooser opens and you can select the file to save to.
+  </li>
+  <li>It is <b>strongly recommended</b> that you password protect your private key export files. To do this, click on
+    the 'Password protect export file' radio button. Enter the password you want to use in the 'Password' field and then
+    repeat the same password in the 'Repeat password' field. If they match you get a little green tick on the right hand
+    side.
+  </li>
+  <li>To output the private keys to the output file specified, click on the button '<img width="16" height="16" title="Export private keys" alt="Export private keys" src="img/exportKey.png">&nbsp;Export
+    private keys'. The private key file is written and a success message appears. If the export of the private key file
+    fails for any reason the error message is given on screen.
+  </li>
+  <li>After the export file is written, it is then verified by reading the file back in again and checking the keys in
+    the file match the keys in the wallet. A verification message is given if this is successful.
+  </li>
+</ol>
+
+<h3 id="exportFileFormat">Export file format (no password)</h3>
+<p>Below is an example of a private key export file containing demonstration private keys. You typically use Notepad or similar when working with this file.</p>
+<pre>
+# KEEP YOUR PRIVATE KEYS SAFE !
+# Anyone who can read this file can spend your monacoin.
+#
+# Format:
+#   &lt;Base58 encoded private key&gt;[&lt;whitespace&gt;[&lt;key createdAt&gt;]]
+#
+#   The Base58 encoded private keys are the same format as
+#   produced by the Satoshi client/ sipa dumpprivkey utility.
+#
+#   Key createdAt is in UTC format as specified by ISO 8601
+#   e.g: 2011-12-31T16:42:00Z . The century, 'T' and 'Z' are mandatory
+#
+<strong>Labc123abc123abc123abc123abc123abc123abc123abc123abc</strong> 2013-01-01T12:00:00Z
+<strong>Kdef456def456def456def456def456def456def456def456def</strong> 2013-01-01T12:00:00Z
+# End of private keys
+</pre>
+<p>The key (shown in bold) begins with either "L" or "K". The date is there to allow import software to know when the key was created to avoid looking further back in history
+than is necessary. Don't change the date to be more recent as doing so will very likely cause a failed import and an incorrect balance.</p>
+
+<h3>Export file format (password protected)</h3>
+<p>Below is an example of a password protected private key export file containing demonstration private keys. You typically use MultiMona or OpenSSL when working with this file.</p>
+<pre>
+U2FsdGVkX1+YqTr9vabcfVlfKlCVTjR7kEg/xD4rEUB1tBBQm6chWSOSIUyJKK/9yjxFSHkge/xI
+UCFq3MfFKqUbRnYcmOhNLBabcGRrbvsx3AawNvzp1sdHFXNvH3I+INMtYaoTjMEJVkQM8KnaUwZI
+GE5PYKtMHncv+2pYA1/3Lg09hPA++jbvwL7L+NH6ZcljvYZxseu+3M45YNK1CJ/4xQJ+Yvo6OVqJ
+nL7xIR0=
+</pre>
+<p>The content is encrypted (AES256, password-based key derivation) so can only be decrypted by special software and the provision of a password.</p>
+<p>The MultiMona wiki provides
+  <a href="https://github.com/jim618/multibit/wiki/Export%20and%20limited%20import%20of%20private%20keys">detailed technical information about the file format</a>.</p>
+<p>If you are intending to store exported keys for a very long time and are concerned about code existing to open them far in the future then we recommend the following:</p>
+<ul>
+  <li>Make a copy of the MultiMona source code (fork on GitHub)</li>
+  <li>Decompile a binary of the MultiMona JAR (standard tools exist for this)</li>
+</ul>
+<p><center><a href="help_contents.html">Back to help contents</a></center></p>
+</body>
+</html>
